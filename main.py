@@ -44,9 +44,9 @@ def plotCmpModelThroughput(MyTx, TCC, loop):
     plt.ylabel("Throughput(TPS)")
     plt.xticks(MyTx.get('thread_num'), MyTx.get('thread_num'))
     plt.title(title)
-    plt.bar(MyTx.get('thread_num') - 1, MyTx.get("throughput"), color='green', label="MyTx", align="center", width=1.5,
+    plt.bar(MyTx.get('thread_num') - 1, MyTx.get("throughput"), color='white', label="MyTx", align="center", width=1.5,
             edgecolor="black", linewidth=0.5)
-    plt.bar(TCC.get('thread_num') + 1, TCC.get("throughput"), color='orange', label="TCC", align="center", width=1.5,
+    plt.bar(TCC.get('thread_num') + 1, TCC.get("throughput"), color='black', label="TCC", align="center", width=1.5,
             edgecolor="black", linewidth=0.5)
     plt.legend(loc='upper left')
     plt.savefig(title)
@@ -65,9 +65,9 @@ def plotCmpModel(MyTx, TCC, loop):
     plt.ylabel("Latency(ms)")
     plt.xticks(MyTx.get('thread_num'), MyTx.get('thread_num'))
     plt.title(title)
-    plt.bar(MyTx.get('thread_num') - 1, MyTx.get("average"), color='green', label="MyTx", align="center", width=1.5,
+    plt.bar(MyTx.get('thread_num') - 1, MyTx.get("average"), color='white', label="MyTx", align="center", width=1.5,
             edgecolor="black", linewidth=0.5)
-    plt.bar(TCC.get('thread_num') + 1, TCC.get("average"), color='orange', label="TCC", align="center", width=1.5,
+    plt.bar(TCC.get('thread_num') + 1, TCC.get("average"), color='black', label="TCC", align="center", width=1.5,
             edgecolor="black", linewidth=0.5)
     plt.legend(loc='upper left')
     plt.savefig(title)
@@ -87,13 +87,13 @@ def plotSingleModel(MyTx, title, loop):
     plt.xlabel('Client Thread Number')
     plt.ylabel("Latency(ms)")
     plt.title(title)
-    plt.plot(MyTx.get('thread_num'), MyTx.get("min"), color='red', label="min", marker='v')
-    plt.plot(MyTx.get('thread_num'), MyTx.get("average"), color='orange', label="average", marker='v', linestyle='--')
-    plt.plot(MyTx.get('thread_num'), MyTx.get("median"), color='yellow', label="median", marker='v', linestyle='-.')
-    plt.plot(MyTx.get('thread_num'), MyTx.get("90%line"), color='green', label="90%line", marker='v', linestyle=':')
-    plt.plot(MyTx.get('thread_num'), MyTx.get("95%line"), color='indigo', label="95%line", marker='v')
-    plt.plot(MyTx.get('thread_num'), MyTx.get("99%line"), color='blue', label="99%line", marker='v', linestyle='--')
-    plt.plot(MyTx.get('thread_num'), MyTx.get("max"), color='purple', label="max", marker='v', linestyle='-.')
+    plt.plot(MyTx.get('thread_num'), MyTx.get("min"), color='black', label="min", marker='v', linestyle='-')
+    plt.plot(MyTx.get('thread_num'), MyTx.get("average"), color='black', label="average", marker='o')
+    plt.plot(MyTx.get('thread_num'), MyTx.get("median"), color='black', label="median", marker='x')
+    plt.plot(MyTx.get('thread_num'), MyTx.get("90%line"), color='black', label="90%line", marker='^', linestyle='--')
+    plt.plot(MyTx.get('thread_num'), MyTx.get("95%line"), color='black', label="95%line", marker='+')
+    plt.plot(MyTx.get('thread_num'), MyTx.get("99%line"), color='black', label="99%line", marker='<', linestyle='-.')
+    plt.plot(MyTx.get('thread_num'), MyTx.get("max"), color='black', label="max", marker='>', linestyle=':')
     plt.legend(loc='upper left')
     plt.savefig(title)
     plt.show()
